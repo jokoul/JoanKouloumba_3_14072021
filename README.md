@@ -1,5 +1,5 @@
 # P3_Kouloumba_Joan
-projet 3 dynamiser une page web avec des animations css
+OCR projet 3 : dynamiser une page web avec des animations css
 
 Objectif : développer un site 100% mobile intitulé Ohmyfood qui répertorie les menus de restaurants gastronomiques. En plus des systèmes classiques de réservation, les clients pourront composer le menu de leur repas pour que les plats soient prêts à leur arrivée.
 
