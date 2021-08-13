@@ -2,6 +2,22 @@
 /*variables*/
 /*mixins*/
 /*keyframes*/
+@keyframes spinHide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /*Style général*/
 * {
   margin: 0;
@@ -55,6 +71,58 @@ a {
 
 .shadow {
   box-shadow: 0.5rem 0 1rem #646464;
+}
+
+/*Style Spinner*/
+.spinner {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: unset;
+  bottom: unset;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  animation: spinHide 1s 3.5s forwards;
+}
+.spinner .load1 {
+  border-top: 1rem solid #9356dc;
+  width: 15rem;
+  height: 15rem;
+}
+.spinner .load2 {
+  border-right: 1rem solid #ff79da;
+  width: 14rem;
+  height: 14rem;
+}
+.spinner .load3 {
+  border-bottom: 1rem solid #99e2d0;
+  width: 13rem;
+  height: 13rem;
+}
+.spinner .load4 {
+  border-left: 1rem solid #646464;
+  width: 12rem;
+  height: 12rem;
+}
+.spinnerLoad {
+  position: absolute;
+  top: 40%;
+  right: unset;
+  bottom: unset;
+  left: 33%;
+  border-radius: 100%;
+  animation: spin 3s 0.5s ease-in-out infinite;
+}
+.spinnerText {
+  font-family: "shrikhand", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: unset;
 }
 
 /*# sourceMappingURL=style.css.map */
