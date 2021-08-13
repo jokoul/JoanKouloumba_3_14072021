@@ -1,3 +1,68 @@
+/*variables*/
+$clr-primary: #9356dc;
+$clr-secondary: #ff79da;
+$clr-tertiary: #99e2d0;
+$clr-primary-light: #b6a4ce;
+$clr-shadow: rgb(100, 100, 100);
+/*mixins*/
+@mixin position(
+  $position: unset,
+  $top: unset,
+  $right: unset,
+  $bottom: unset,
+  $left: unset
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+@mixin dimension($width: unset, $height: unset) {
+  width: $width;
+  height: $height;
+}
+@mixin flexbox($display: flex, $justify: unset, $align: unset) {
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin texte_style($font-size: unset, $font-weight: unset, $color: unset) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+}
+/*keyframes*/
+
+/*Style général*/
 * {
   margin: 0;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  @include texte_style($font-size: 1rem, $font-weight: 400);
+  box-sizing: border-box;
+  @include position($position: relative);
+  @include dimension($width: 100%, $height: 50rem);
+}
+a {
+  text-decoration: none;
+  /*color: unset;*/
+  @include texte_style;
+}
+/*Style HEADER*/
+.header {
+  padding-top: 1rem;
+  @include dimension($height: 4rem);
+  @include flexbox($display: flex, $justify: center, $align: center);
+  &Return {
+    @include texte_style($font-size: 1.5rem);
+    @include position($position: absolute, $top: 2rem, $left: 2rem);
+  }
+  & .inactive {
+    display: none;
+  }
+}
+.shadow {
+  box-shadow: 0.5rem 0 1rem $clr-shadow;
 }
