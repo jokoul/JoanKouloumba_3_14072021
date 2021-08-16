@@ -235,4 +235,106 @@ a {
   }
 }
 
+/*Style Instruction*/
+.instruction {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.instructionTitle {
+  margin: 3rem 0 1.5rem 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: black;
+}
+.instructionContain {
+  width: 90%;
+  height: unset;
+  margin: 0 auto;
+}
+.instructionCard {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+  background-color: rgba(233, 233, 233, 0.603);
+  margin-bottom: 1.5rem;
+  border-radius: 1.3rem;
+  box-shadow: 0 0 1.5rem #cacaca;
+}
+.instructionCardNumber {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  font-weight: unset;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9356dc;
+  border-radius: 50%;
+  margin-right: 2rem;
+  margin-left: -1rem;
+}
+@media screen and (max-width: 270px) {
+  .instructionCardNumber {
+    margin-right: 1rem;
+    margin-left: -0.5rem;
+    font-size: 1rem;
+    font-weight: unset;
+    color: white;
+  }
+}
+@media screen and (max-width: 370px) {
+  .instructionCardNumber {
+    margin-right: 1.5rem;
+    margin-left: -0.75rem;
+    font-size: 1.2rem;
+    font-weight: unset;
+    color: white;
+  }
+}
+.instructionCard .fas {
+  font-size: 1.5rem;
+  color: rgba(80, 80, 80, 0.603);
+  margin-right: 2rem;
+}
+@media screen and (max-width: 270px) {
+  .instructionCard .fas {
+    margin-right: 1rem;
+  }
+}
+@media screen and (max-width: 370px) {
+  .instructionCard .fas {
+    margin-right: 1.5rem;
+  }
+}
+.instructionCardText {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: black;
+}
+@media screen and (max-width: 270px) {
+  .instructionCardText {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+  }
+}
+@media screen and (max-width: 370px) {
+  .instructionCardText {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: black;
+  }
+}
+.instructionCard:hover {
+  background-color: #f3eaff;
+}
+.instructionCard:hover .fas {
+  color: #9356dc;
+}
+
 /*# sourceMappingURL=style.css.map */

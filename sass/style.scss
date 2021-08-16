@@ -2,7 +2,7 @@
 $clr-primary: #9356dc;
 $clr-secondary: #ff79da;
 $clr-tertiary: #99e2d0;
-$clr-primary-light: #b6a4ce;
+$clr-primary-light: #f3eaff;
 $clr-shadow: rgb(100, 100, 100);
 $clr-search: rgba(207, 207, 207, 0.603);
 $clr-search-light: lighten($clr-search, 10%);
@@ -211,6 +211,84 @@ a {
           $font-weight: 500,
           $color: white
         );
+      }
+    }
+  }
+}
+/*Style Instruction*/
+.instruction {
+  @include flexbox($display: flex, $justify: space-between, $align: flex-start);
+  flex-direction: column;
+  &Title {
+    margin: 3rem 0 1.5rem 1rem;
+    @include texte_style($font-size: 2rem, $font-weight: 700, $color: black);
+  }
+  &Contain {
+    @include dimension($width: 90%);
+    margin: 0 auto;
+  }
+  &Card {
+    @include flexbox($display: flex, $justify: flex-start, $align: center);
+    @include dimension($width: 100%, $height: 5rem);
+    background-color: $clr-search-light;
+    margin-bottom: 1.5rem;
+    border-radius: 1.3rem;
+    box-shadow: 0 0 1.5rem lighten($clr-shadow, 40%);
+    &Number {
+      @include dimension($width: 2rem, $height: 2rem);
+      @include texte_style($font-size: 1.5rem, $color: white);
+      @include flexbox($display: flex, $justify: center, $align: center);
+      background-color: $clr-primary;
+      border-radius: 50%;
+      margin-right: 2rem;
+      margin-left: -1rem;
+      @media screen and (max-width: 270px) {
+        margin-right: 1rem;
+        margin-left: -0.5rem;
+        @include texte_style($font-size: 1rem, $color: white);
+      }
+      @media screen and (max-width: 370px) {
+        margin-right: 1.5rem;
+        margin-left: -0.75rem;
+        @include texte_style($font-size: 1.2rem, $color: white);
+      }
+    }
+    & .fas {
+      font-size: 1.5rem;
+      color: darken($clr-search, 50%);
+      margin-right: 2rem;
+      @media screen and (max-width: 270px) {
+        margin-right: 1rem;
+      }
+      @media screen and (max-width: 370px) {
+        margin-right: 1.5rem;
+      }
+    }
+    &Text {
+      @include texte_style(
+        $font-size: 1.5rem,
+        $font-weight: 500,
+        $color: black
+      );
+      @media screen and (max-width: 270px) {
+        @include texte_style(
+          $font-size: 1.2rem,
+          $font-weight: 500,
+          $color: black
+        );
+      }
+      @media screen and (max-width: 370px) {
+        @include texte_style(
+          $font-size: 1.3rem,
+          $font-weight: 500,
+          $color: black
+        );
+      }
+    }
+    &:hover {
+      background-color: $clr-primary-light;
+      & .fas {
+        color: $clr-primary;
       }
     }
   }
