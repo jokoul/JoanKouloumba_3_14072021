@@ -8,6 +8,8 @@
   }
   100% {
     opacity: 0;
+    z-index: -1;
+    display: none;
   }
 }
 @keyframes spin {
@@ -28,19 +30,15 @@ body {
   font-size: 1rem;
   font-weight: 400;
   color: unset;
-  box-sizing: border-box;
   position: relative;
   top: unset;
   right: unset;
   bottom: unset;
   left: unset;
-  width: 100%;
-  height: 50rem;
 }
 
 a {
   text-decoration: none;
-  /*color: unset;*/
   font-size: unset;
   font-weight: unset;
   color: unset;
@@ -54,6 +52,10 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.headerLogo {
+  width: 15rem;
+  height: unset;
 }
 .headerReturn {
   font-size: 1.5rem;
@@ -70,7 +72,7 @@ a {
 }
 
 .shadow {
-  box-shadow: 0.5rem 0 1rem #646464;
+  box-shadow: 0 0.3rem 0.5rem #646464;
 }
 
 /*Style Spinner*/
@@ -86,43 +88,151 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   background-color: white;
   animation: spinHide 1s 3.5s forwards;
 }
-.spinner .load1 {
-  border-top: 1rem solid #9356dc;
+.spinnerContain {
+  position: relative;
+  top: unset;
+  right: unset;
+  bottom: unset;
+  left: unset;
   width: 15rem;
   height: 15rem;
 }
-.spinner .load2 {
-  border-right: 1rem solid #ff79da;
-  width: 14rem;
-  height: 14rem;
-}
-.spinner .load3 {
-  border-bottom: 1rem solid #99e2d0;
-  width: 13rem;
-  height: 13rem;
-}
-.spinner .load4 {
-  border-left: 1rem solid #646464;
-  width: 12rem;
-  height: 12rem;
-}
 .spinnerLoad {
   position: absolute;
-  top: 40%;
+  top: unset;
   right: unset;
   bottom: unset;
-  left: 33%;
+  left: unset;
   border-radius: 100%;
   animation: spin 3s 0.5s ease-in-out infinite;
 }
+.spinner .load1 {
+  border-top: 1rem solid #9356dc;
+  width: 13rem;
+  height: 13rem;
+}
+.spinner .load2 {
+  border-right: 1rem solid #ff79da;
+  width: 12rem;
+  height: 12rem;
+}
+.spinner .load3 {
+  border-bottom: 1rem solid #99e2d0;
+  width: 11rem;
+  height: 11rem;
+}
+.spinner .load4 {
+  border-left: 1rem solid #646464;
+  width: 10rem;
+  height: 10rem;
+}
 .spinnerText {
   font-family: "shrikhand", sans-serif;
-  font-size: 1.3rem;
+  font-size: 2rem;
   font-weight: 700;
   color: unset;
+}
+
+/*Style search*/
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.searchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3.5rem;
+  background-color: rgba(207, 207, 207, 0.603);
+}
+.searchForm i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+.searchForm input {
+  width: 30%;
+  height: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: black;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.searchForm input::placeholder {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: black;
+}
+.searchTitle {
+  background-color: rgba(233, 233, 233, 0.603);
+  text-align: center;
+  width: 100%;
+  height: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.searchTitle h1 {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: black;
+  width: 50%;
+  height: unset;
+  padding: 3rem 0 1.5rem 0;
+}
+.searchTitle p {
+  font-size: 2rem;
+  font-weight: 400;
+  color: black;
+  width: 80%;
+  height: unset;
+  padding-bottom: 2rem;
+}
+.searchTitle .btn {
+  width: 45%;
+  height: 4rem;
+  max-width: 30rem;
+  margin-bottom: 3.5rem;
+  border: none;
+  border-radius: 10rem;
+  background: linear-gradient(-5deg, #9356dc 5%, #ff79da 95%);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 0.2rem 0.5rem #979797;
+}
+.searchTitle .btn:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 0.5rem 1rem #646464;
+}
+@media screen and (max-width: 575px) {
+  .searchTitle .btn {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 330px) {
+  .searchTitle .btn {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
