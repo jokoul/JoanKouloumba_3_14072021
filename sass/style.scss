@@ -6,6 +6,8 @@ $clr-primary-light: #f3eaff;
 $clr-shadow: rgb(100, 100, 100);
 $clr-search: rgba(207, 207, 207, 0.603);
 $clr-search-light: lighten($clr-search, 10%);
+$clr-new: rgb(0, 87, 0);
+$clr-new-light: rgb(113, 255, 224);
 /*mixins*/
 @mixin position(
   $position: unset,
@@ -88,7 +90,7 @@ a {
 /*Style Spinner*/
 .spinner {
   z-index: 1;
-  @include position($position: absolute, $top: 0, $left: 0);
+  @include position($position: fixed, $top: 0, $left: 0);
   @include dimension($width: 100%, $height: 100%);
   @include flexbox($display: flex, $justify: center, $align: center);
   flex-direction: column;
@@ -226,6 +228,10 @@ a {
   &Contain {
     @include dimension($width: 90%);
     margin: 0 auto;
+    @media screen and (min-width: 1024px) {
+      @include flexbox($display: flex, $justify: space-between, $align: center);
+      @include dimension($width: 95%);
+    }
   }
   &Card {
     @include flexbox($display: flex, $justify: flex-start, $align: center);
@@ -234,6 +240,9 @@ a {
     margin-bottom: 1.5rem;
     border-radius: 1.3rem;
     box-shadow: 0 0 1.5rem lighten($clr-shadow, 40%);
+    @media screen and (min-width: 1024px) {
+      @include dimension($width: 30%, $height: 5rem);
+    }
     &Number {
       @include dimension($width: 2rem, $height: 2rem);
       @include texte_style($font-size: 1.5rem, $color: white);
@@ -252,8 +261,15 @@ a {
         margin-left: -0.75rem;
         @include texte_style($font-size: 1.2rem, $color: white);
       }
+      @media screen and (min-width: 1024px) {
+        margin-right: 1rem;
+      }
     }
-    & .fas {
+    & i {
+      /*@include texte_style(
+        $font-size: 1.5rem,
+        $color: darken($clr-search, 50%)
+      );*/
       font-size: 1.5rem;
       color: darken($clr-search, 50%);
       margin-right: 2rem;
@@ -262,6 +278,9 @@ a {
       }
       @media screen and (max-width: 370px) {
         margin-right: 1.5rem;
+      }
+      @media screen and (min-width: 1024px) {
+        margin-right: 1rem;
       }
     }
     &Text {
@@ -284,11 +303,121 @@ a {
           $color: black
         );
       }
+      @media screen and (min-width: 1024px) {
+        @include texte_style(
+          $font-size: 1.1rem,
+          $font-weight: 500,
+          $color: black
+        );
+      }
     }
     &:hover {
       background-color: $clr-primary-light;
       & .fas {
         color: $clr-primary;
+      }
+    }
+  }
+}
+/*Style Restaurant*/
+.restaurant {
+  background-color: $clr-search-light;
+  padding-top: 3rem;
+  &Title {
+    margin: 0 0 1.5rem 1rem;
+    @include texte_style($font-size: 2rem, $font-weight: 700, $color: black);
+  }
+  &Cards {
+    @include dimension($width: 92%);
+    margin: 0 auto;
+    @include flexbox($display: flex, $justify: space-around, $align: center);
+    flex-direction: column;
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+  &Card {
+    @include dimension($width: 100%, $height: 20rem);
+    border-radius: 2rem;
+    background-color: white;
+    margin-bottom: 2rem;
+    box-shadow: 0 0.2rem 1rem lighten($clr-shadow, 40%);
+    @include position($position: relative);
+    @media screen and (min-width: 1024px) {
+      @include dimension($width: 45%);
+    }
+    &Img {
+      @include dimension($width: 100%, $height: 15rem);
+      border-radius: 2rem 2rem 0 0;
+      object-fit: cover;
+    }
+    &Legend {
+      margin: 1rem 2rem 0.5rem 1rem;
+    }
+    &Title {
+      @include texte_style(
+        $font-size: 1.5rem,
+        $font-weight: 600,
+        $color: black
+      );
+    }
+    &Text {
+      @include texte_style($font-size: 1.2rem);
+    }
+    &New {
+      @include position($position: absolute, $top: 2rem, $right: 2rem);
+      @include texte_style(
+        $font-size: 1.1rem,
+        $font-weight: 500,
+        $color: $clr-new
+      );
+      background-color: $clr-new-light;
+      border-radius: 0.2rem;
+      padding: 0.7rem;
+    }
+    & .btnLike {
+      @include position($position: absolute, $right: 1.5rem, $bottom: 0.7rem);
+      @include dimension($width: 2rem, $height: 2rem);
+      @include texte_style($font-size: 2rem);
+      cursor: pointer;
+      & .far {
+        @include position($position: absolute);
+      }
+      & .fas {
+        @include position($position: absolute);
+        opacity: 0;
+        transform: scaleY(0);
+      }
+      &:hover {
+        & .far {
+          opacity: 0;
+        }
+        & .fas {
+          opacity: 1;
+          transform: scaleY(1);
+          transform-origin: 50% 100%;
+          transition: opacity 0.3s, transform 0.5s;
+          background: -moz-linear-gradient(
+            10deg,
+            $clr-secondary 5%,
+            $clr-primary 95%
+          );
+          background: -webkit-linear-gradient(
+            10deg,
+            $clr-secondary 5%,
+            $clr-primary 95%
+          );
+          background: linear-gradient(
+            10deg,
+            $clr-secondary 5%,
+            $clr-primary 95%
+          );
+          -webkit-background-clip: text;
+          -moz-background-clip: text;
+          background-clip: text;
+          color: transparent;
+        }
       }
     }
   }
