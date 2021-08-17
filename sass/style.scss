@@ -8,6 +8,7 @@ $clr-search: rgba(207, 207, 207, 0.603);
 $clr-search-light: lighten($clr-search, 10%);
 $clr-new: rgb(0, 87, 0);
 $clr-new-light: rgb(113, 255, 224);
+$clr-footer: rgb(66, 66, 66);
 /*mixins*/
 @mixin position(
   $position: unset,
@@ -418,6 +419,37 @@ a {
           background-clip: text;
           color: transparent;
         }
+      }
+    }
+  }
+}
+/*Style Footer*/
+.footer {
+  @include texte_style($font-size: 1.3rem, $font-weight: 500, $color: white);
+  background-color: $clr-footer;
+  padding-bottom: 2.5rem;
+  @media screen and (min-width: 768px) {
+    @include flexbox($display: flex, $justify: center, $align: center);
+    flex-direction: column;
+  }
+  &Logo {
+    filter: invert(100%);
+    margin: 2rem 0 0.5rem 2.5rem;
+    @include dimension($width: 8rem);
+  }
+  &List {
+    list-style-type: none;
+    @media screen and (min-width: 1024px) {
+      @include flexbox($display: flex, $justify: space-between, $align: center);
+      @include dimension($width: 90%);
+    }
+    &Item {
+      margin-top: 1rem;
+      & i {
+        margin-right: 0.5rem;
+      }
+      & .fa-hands-helping {
+        font-size: 0.9rem;
       }
     }
   }

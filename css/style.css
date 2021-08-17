@@ -496,4 +496,48 @@ a {
   color: transparent;
 }
 
+/*Style Footer*/
+.footer {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: white;
+  background-color: #424242;
+  padding-bottom: 2.5rem;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.footerLogo {
+  filter: invert(100%);
+  margin: 2rem 0 0.5rem 2.5rem;
+  width: 8rem;
+  height: unset;
+}
+.footerList {
+  list-style-type: none;
+}
+@media screen and (min-width: 1024px) {
+  .footerList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: unset;
+  }
+}
+.footerListItem {
+  margin-top: 1rem;
+}
+.footerListItem i {
+  margin-right: 0.5rem;
+}
+.footerListItem .fa-hands-helping {
+  font-size: 0.9rem;
+}
+
 /*# sourceMappingURL=style.css.map */
