@@ -685,6 +685,9 @@ a {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      @media screen and (max-width: 360px) {
+        margin-left: 0.2rem;
+      }
     }
     &Title {
       @include texte_style(
@@ -695,9 +698,9 @@ a {
       margin-bottom: 0.3rem;
       overflow: hidden;
       text-overflow: ellipsis;
-      @media screen and (max-width: 280px) {
+      @media screen and (max-width: 360px) {
         @include texte_style(
-          $font-size: 1.2rem,
+          $font-size: 1rem,
           $font-weight: 500,
           $color: black
         );
@@ -711,9 +714,9 @@ a {
       );
       overflow: hidden;
       text-overflow: ellipsis;
-      @media screen and (max-width: 280px) {
+      @media screen and (max-width: 360px) {
         @include texte_style(
-          $font-size: 1rem,
+          $font-size: 0.9rem,
           $font-weight: 400,
           $color: black
         );
@@ -729,9 +732,15 @@ a {
         $font-weight: 700,
         $color: black
       );
-      @media screen and (max-width: 280px) {
+      @media screen and (max-width: 360px) {
+        @include dimension($width: 2rem, $height: 50%);
+        @include flexbox(
+          $display: flex,
+          $justify: flex-start,
+          $align: flex-end
+        );
         margin: 0;
-        padding-right: 0.5rem;
+        padding-right: 0.2rem;
         padding-top: 0.5rem;
         @include texte_style(
           $font-size: 1rem,

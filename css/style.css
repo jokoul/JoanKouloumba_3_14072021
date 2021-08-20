@@ -801,6 +801,11 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+@media screen and (max-width: 360px) {
+  .menuCardLegend {
+    margin-left: 0.2rem;
+  }
+}
 .menuCardTitle {
   font-size: 1.5rem;
   font-weight: 500;
@@ -809,9 +814,9 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 360px) {
   .menuCardTitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
     color: black;
   }
@@ -823,9 +828,9 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 360px) {
   .menuCardText {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
     color: black;
   }
@@ -842,10 +847,15 @@ a {
   font-weight: 700;
   color: black;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 360px) {
   .menuCardPrice {
+    width: 2rem;
+    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
     margin: 0;
-    padding-right: 0.5rem;
+    padding-right: 0.2rem;
     padding-top: 0.5rem;
     font-size: 1rem;
     font-weight: 700;
