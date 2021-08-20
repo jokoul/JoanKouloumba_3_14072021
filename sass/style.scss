@@ -1,7 +1,9 @@
 /*variables*/
 $clr-primary: #9356dc;
 $clr-secondary: #ff79da;
+$clr-secondary-light: lighten($clr-secondary, 15%);
 $clr-tertiary: #99e2d0;
+$clr-tertiary-strong: darken($clr-tertiary, 5%);
 $clr-primary-light: #f3eaff;
 $clr-shadow: rgb(100, 100, 100);
 $clr-search: rgba(207, 207, 207, 0.603);
@@ -9,6 +11,7 @@ $clr-search-light: lighten($clr-search, 10%);
 $clr-new: rgb(0, 87, 0);
 $clr-new-light: rgb(113, 255, 224);
 $clr-footer: rgb(66, 66, 66);
+$clr-menu: rgb(243, 243, 243);
 /*mixins*/
 @mixin position(
   $position: unset,
@@ -56,6 +59,34 @@ $clr-footer: rgb(66, 66, 66);
     transform: rotate(360deg);
   }
 }
+@keyframes check {
+  0% {
+    margin-right: -5rem;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+@keyframes circle {
+  0% {
+    transform: rotate(-500deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes appearC {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 /*Style général*/
 * {
   margin: 0;
@@ -64,6 +95,13 @@ body {
   font-family: "Roboto", sans-serif;
   @include texte_style($font-size: 1rem, $font-weight: 400);
   @include position($position: relative);
+  @media screen and (min-width: 1024px) {
+    background: linear-gradient(
+      0deg,
+      $clr-secondary-light,
+      $clr-tertiary-strong
+    );
+  }
 }
 a {
   text-decoration: none;
@@ -74,15 +112,16 @@ a {
   padding-top: 1rem;
   @include dimension($height: 4rem);
   @include flexbox($display: flex, $justify: center, $align: center);
+  background-color: white;
   &Logo {
     @include dimension($width: 15rem);
+    @media screen and (max-width: 300px) {
+      @include dimension($width: 10rem);
+    }
   }
   &Return {
     @include texte_style($font-size: 1.5rem);
-    @include position($position: absolute, $top: 2rem, $left: 2rem);
-  }
-  & .inactive {
-    display: none;
+    @include position($position: absolute, $top: 2rem, $left: 0.5rem);
   }
 }
 .shadow {
@@ -200,6 +239,10 @@ a {
         filter: brightness(1.2);
         box-shadow: 0 0.5rem 1rem $clr-shadow;
       }
+      &:active {
+        filter: brightness(1.2);
+        box-shadow: 0 0.5rem 1rem $clr-shadow;
+      }
       @media screen and (max-width: 575px) {
         @include texte_style(
           $font-size: 1.2rem,
@@ -267,10 +310,6 @@ a {
       }
     }
     & i {
-      /*@include texte_style(
-        $font-size: 1.5rem,
-        $color: darken($clr-search, 50%)
-      );*/
       font-size: 1.5rem;
       color: darken($clr-search, 50%);
       margin-right: 2rem;
@@ -318,12 +357,19 @@ a {
         color: $clr-primary;
       }
     }
+    &:active {
+      background-color: $clr-primary-light;
+      & .fas {
+        color: $clr-primary;
+      }
+    }
   }
 }
 /*Style Restaurant*/
 .restaurant {
   background-color: $clr-search-light;
   padding-top: 3rem;
+  margin-top: 2rem;
   &Title {
     margin: 0 0 1.5rem 1rem;
     @include texte_style($font-size: 2rem, $font-weight: 700, $color: black);
@@ -343,6 +389,7 @@ a {
     border-radius: 2rem;
     background-color: white;
     margin-bottom: 2rem;
+    padding-bottom: 1rem;
     box-shadow: 0 0.2rem 1rem lighten($clr-shadow, 40%);
     @include position($position: relative);
     @media screen and (min-width: 1024px) {
@@ -378,7 +425,7 @@ a {
       padding: 0.7rem;
     }
     & .btnLike {
-      @include position($position: absolute, $right: 1.5rem, $bottom: 0.7rem);
+      @include position($position: absolute, $right: 2rem, $bottom: 2rem);
       @include dimension($width: 2rem, $height: 2rem);
       @include texte_style($font-size: 2rem);
       cursor: pointer;
@@ -391,6 +438,36 @@ a {
         transform: scaleY(0);
       }
       &:hover {
+        & .far {
+          opacity: 0;
+        }
+        & .fas {
+          opacity: 1;
+          transform: scaleY(1);
+          transform-origin: 50% 100%;
+          transition: opacity 0.3s, transform 0.5s;
+          background: -moz-linear-gradient(
+            10deg,
+            $clr-secondary 5%,
+            $clr-primary 95%
+          );
+          background: -webkit-linear-gradient(
+            10deg,
+            $clr-secondary 5%,
+            $clr-primary 95%
+          );
+          background: linear-gradient(
+            10deg,
+            $clr-secondary 5%,
+            $clr-primary 95%
+          );
+          -webkit-background-clip: text;
+          -moz-background-clip: text;
+          background-clip: text;
+          color: transparent;
+        }
+      }
+      &:active {
         & .far {
           opacity: 0;
         }
@@ -451,6 +528,300 @@ a {
       & .fa-hands-helping {
         font-size: 0.9rem;
       }
+    }
+  }
+}
+/*Style Banner*/
+.banner {
+  @include dimension($width: 100%);
+  & .adjustMenu_2 {
+    margin: -7rem 0 -7rem 0;
+  }
+  &Img {
+    @include dimension($width: 100%);
+    @include position($position: relative);
+    object-fit: cover;
+    z-index: -1;
+    @media screen and (min-width: 1024px) {
+      @include dimension($width: 100%, $height: 30rem);
+    }
+  }
+}
+/*Style Menu*/
+.menu {
+  @include position($position: relative);
+  background-color: $clr-menu;
+  border: none;
+  border-radius: 3rem 3rem 0 0;
+  margin-top: -4rem;
+  padding-bottom: 1rem;
+  @media screen and (min-width: 1024px) and (max-width: 1400px) {
+    @include dimension($width: 80%);
+    margin: -4rem auto 0 auto;
+  }
+  &Title {
+    @include texte_style($font-size: 2.5rem, $font-weight: 900, $color: black);
+    padding: 3rem 7rem 2rem 1.5rem;
+    font-family: "shrikhand", sans-serif;
+    @media screen and (max-width: 300px) {
+      @include texte_style($font-size: 2rem, $font-weight: 900, $color: black);
+      padding: 3rem 6rem 2rem 1.5rem;
+    }
+  }
+  & .btnLike {
+    @include position($position: absolute, $right: 1.5rem, $bottom: 0.7rem);
+    @include dimension($width: 2rem, $height: 2rem);
+    @include texte_style($font-size: 2rem);
+    cursor: pointer;
+    & .far {
+      @include position($position: absolute);
+    }
+    & .fas {
+      @include position($position: absolute);
+      opacity: 0;
+      transform: scaleY(0);
+    }
+    &:hover {
+      & .far {
+        opacity: 0;
+      }
+      & .fas {
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: 50% 100%;
+        transition: opacity 0.3s, transform 0.5s;
+        background: -moz-linear-gradient(
+          10deg,
+          $clr-secondary 5%,
+          $clr-primary 95%
+        );
+        background: -webkit-linear-gradient(
+          10deg,
+          $clr-secondary 5%,
+          $clr-primary 95%
+        );
+        background: linear-gradient(10deg, $clr-secondary 5%, $clr-primary 95%);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    }
+    &:active {
+      & .far {
+        opacity: 0;
+      }
+      & .fas {
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: 50% 100%;
+        transition: opacity 0.3s, transform 0.5s;
+        background: -moz-linear-gradient(
+          10deg,
+          $clr-secondary 5%,
+          $clr-primary 95%
+        );
+        background: -webkit-linear-gradient(
+          10deg,
+          $clr-secondary 5%,
+          $clr-primary 95%
+        );
+        background: linear-gradient(10deg, $clr-secondary 5%, $clr-primary 95%);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    }
+  }
+  & .menuLike {
+    @include texte_style($font-size: 2.5rem, $font-weight: 400);
+    @include position($position: absolute, $right: 3.5rem, $top: 3.5rem);
+  }
+  &Contain {
+    @include dimension($width: 90%);
+    margin: 0 auto;
+    @media screen and (min-width: 1400px) {
+      @include flexbox(
+        $display: flex,
+        $justify: space-around,
+        $align: flex-start
+      );
+      @include dimension($width: 100%);
+    }
+  }
+  &SubMenu {
+    margin-bottom: 1.5rem;
+    @media screen and (min-width: 1400px) {
+      @include dimension($width: 30%);
+    }
+    &Title {
+      text-transform: uppercase;
+      margin-left: 0.5rem;
+      @include texte_style(
+        $font-size: 1.5rem,
+        $font-weight: 400,
+        $color: black
+      );
+      & .underLine {
+        @include dimension($width: 3.7rem, $height: 0.3rem);
+        background-color: $clr-tertiary;
+        margin: 0.3rem 0 1.3rem 0;
+      }
+    }
+  }
+  &Card {
+    @include dimension($width: 100%, $height: 5rem);
+    @include flexbox($display: flex, $justify: space-between, $align: center);
+    border-radius: 1rem;
+    background-color: white;
+    box-shadow: 0 0.2rem 1rem lighten($clr-shadow, 40%);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    &Legend {
+      margin-left: 1rem;
+      flex: auto;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &Title {
+      @include texte_style(
+        $font-size: 1.5rem,
+        $font-weight: 500,
+        $color: black
+      );
+      margin-bottom: 0.3rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @media screen and (max-width: 280px) {
+        @include texte_style(
+          $font-size: 1.2rem,
+          $font-weight: 500,
+          $color: black
+        );
+      }
+    }
+    &Text {
+      @include texte_style(
+        $font-size: 1.2rem,
+        $font-weight: 400,
+        $color: black
+      );
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @media screen and (max-width: 280px) {
+        @include texte_style(
+          $font-size: 1rem,
+          $font-weight: 400,
+          $color: black
+        );
+      }
+    }
+    &Price {
+      @include dimension($width: 3rem, $height: 50%);
+      @include flexbox($display: flex, $justify: center, $align: flex-end);
+      padding-top: 1.2rem;
+      margin: 0 1rem 0 0.5rem;
+      @include texte_style(
+        $font-size: 1.3rem,
+        $font-weight: 700,
+        $color: black
+      );
+      @media screen and (max-width: 280px) {
+        margin: 0;
+        padding-right: 0.5rem;
+        padding-top: 0.5rem;
+        @include texte_style(
+          $font-size: 1rem,
+          $font-weight: 700,
+          $color: black
+        );
+      }
+    }
+    &Check {
+      @include dimension($width: 5rem, $height: 100%);
+      @include flexbox($display: flex, $justify: center, $align: center);
+      background-color: $clr-tertiary;
+      border-radius: 0 1rem 1rem 0;
+      margin-right: -5rem;
+      & i {
+        font-size: 1.7rem;
+        color: white;
+      }
+    }
+    &:hover .animateCheck {
+      animation: check 0.5s ease-in-out forwards;
+    }
+    &:hover .animateCircle {
+      animation: circle 0.5s ease-in-out forwards;
+    }
+    &:active .animateCheck {
+      animation: check 0.5s ease-in-out forwards;
+    }
+    &:active .animateCircle {
+      animation: circle 0.5s ease-in-out forwards;
+    }
+  }
+  & .appearCard {
+    animation: appearC 1s ease-in-out both;
+  }
+  /*& .appearCard_1 {
+    animation-delay: 0;
+  }
+  & .appearCard_2 {
+    animation-delay: 0.3s;
+  }
+  & .appearCard_3 {
+    animation-delay: 0.6s;
+  }
+  & .appearCard_4 {
+    animation-delay: 0.9s;
+  }*/
+  @for $i from 1 through 4 {
+    & .appearCard_#{$i} {
+      animation-delay: 0.3 * ($i - 1s);
+    }
+  }
+  & .btn {
+    @include dimension($width: 45%, $height: 4rem);
+    max-width: 30rem;
+    margin-bottom: 3.5rem;
+    border: none;
+    border-radius: 10rem;
+    background: linear-gradient(-5deg, $clr-primary 5%, $clr-secondary 95%);
+    @include texte_style($font-size: 1.3rem, $font-weight: 500, $color: white);
+    padding: 1rem;
+    box-shadow: 0 0.2rem 0.5rem lighten($clr-shadow, 20%);
+    &:hover {
+      filter: brightness(1.2);
+      box-shadow: 0 0.5rem 1rem $clr-shadow;
+    }
+    &:active {
+      filter: brightness(1.2);
+      box-shadow: 0 0.5rem 1rem $clr-shadow;
+    }
+    @media screen and (max-width: 575px) {
+      @include texte_style(
+        $font-size: 1.2rem,
+        $font-weight: 500,
+        $color: white
+      );
+      padding: 0.5rem;
+    }
+    @media screen and (max-width: 330px) {
+      @include texte_style(
+        $font-size: 0.9rem,
+        $font-weight: 500,
+        $color: white
+      );
+    }
+  }
+  &Submit {
+    @include flexbox($display: flex, $justify: center, $align: center);
+    & .btnMenu {
+      margin-top: 2rem;
     }
   }
 }
