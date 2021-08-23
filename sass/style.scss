@@ -235,6 +235,7 @@ a {
       );
       padding: 1rem;
       box-shadow: 0 0.2rem 0.5rem lighten($clr-shadow, 20%);
+      cursor: pointer;
       &:hover {
         filter: brightness(1.2);
         box-shadow: 0 0.5rem 1rem $clr-shadow;
@@ -283,7 +284,7 @@ a {
     background-color: $clr-search-light;
     margin-bottom: 1.5rem;
     border-radius: 1.3rem;
-    box-shadow: 0 0 1.5rem lighten($clr-shadow, 40%);
+    box-shadow: 0 0 1rem lighten($clr-shadow, 40%);
     @media screen and (min-width: 1024px) {
       @include dimension($width: 30%, $height: 5rem);
     }
@@ -389,7 +390,7 @@ a {
     border-radius: 2rem;
     background-color: white;
     margin-bottom: 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
     box-shadow: 0 0.2rem 1rem lighten($clr-shadow, 40%);
     @include position($position: relative);
     @media screen and (min-width: 1024px) {
@@ -426,7 +427,7 @@ a {
     }
     & .btnLike {
       @include position($position: absolute, $right: 2rem, $bottom: 2rem);
-      @include dimension($width: 2rem, $height: 2rem);
+      @include dimension($width: 2.5rem, $height: 2rem);
       @include texte_style($font-size: 2rem);
       cursor: pointer;
       & .far {
@@ -435,66 +436,56 @@ a {
       & .fas {
         @include position($position: absolute);
         opacity: 0;
-        transform: scaleY(0);
+        transform: scale(0);
+        transform-origin: 50% 100%;
+        transition: opacity 0.5s, transform 0.5s;
       }
       &:hover {
-        & .far {
-          opacity: 0;
-        }
-        & .fas {
-          opacity: 1;
-          transform: scaleY(1);
-          transform-origin: 50% 100%;
-          transition: opacity 0.3s, transform 0.5s;
-          background: -moz-linear-gradient(
-            10deg,
-            $clr-secondary 5%,
-            $clr-primary 95%
-          );
-          background: -webkit-linear-gradient(
-            10deg,
-            $clr-secondary 5%,
-            $clr-primary 95%
-          );
+        .far {
           background: linear-gradient(
             10deg,
-            $clr-secondary 5%,
-            $clr-primary 95%
+            $clr-primary 5%,
+            $clr-secondary 95%
           );
-          -webkit-background-clip: text;
-          -moz-background-clip: text;
           background-clip: text;
+          -webkit-background-clip: text;
           color: transparent;
+        }
+        .fas {
+          background: linear-gradient(
+            10deg,
+            $clr-primary 5%,
+            $clr-secondary 95%
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+          opacity: 1;
+          transform: scale(1);
         }
       }
       &:active {
-        & .far {
-          opacity: 0;
-        }
-        & .fas {
-          opacity: 1;
-          transform: scaleY(1);
-          transform-origin: 50% 100%;
-          transition: opacity 0.3s, transform 0.5s;
-          background: -moz-linear-gradient(
-            10deg,
-            $clr-secondary 5%,
-            $clr-primary 95%
-          );
-          background: -webkit-linear-gradient(
-            10deg,
-            $clr-secondary 5%,
-            $clr-primary 95%
-          );
+        .far {
           background: linear-gradient(
             10deg,
-            $clr-secondary 5%,
-            $clr-primary 95%
+            $clr-primary 5%,
+            $clr-secondary 95%
           );
-          -webkit-background-clip: text;
-          -moz-background-clip: text;
           background-clip: text;
+          -webkit-background-clip: text;
           color: transparent;
+        }
+        .fas {
+          background: linear-gradient(
+            10deg,
+            $clr-primary 5%,
+            $clr-secondary 95%
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+          opacity: 1;
+          transform: scale(1);
         }
       }
     }
@@ -569,8 +560,8 @@ a {
     }
   }
   & .btnLike {
-    @include position($position: absolute, $right: 1.5rem, $bottom: 0.7rem);
-    @include dimension($width: 2rem, $height: 2rem);
+    @include position($position: absolute, $right: 2rem, $bottom: 2rem);
+    @include dimension($width: 2.5rem, $height: 2rem);
     @include texte_style($font-size: 2rem);
     cursor: pointer;
     & .far {
@@ -579,58 +570,40 @@ a {
     & .fas {
       @include position($position: absolute);
       opacity: 0;
-      transform: scaleY(0);
+      transform: scale(0);
+      transform-origin: 50% 100%;
+      transition: opacity 0.5s, transform 0.5s;
     }
     &:hover {
-      & .far {
-        opacity: 0;
-      }
-      & .fas {
-        opacity: 1;
-        transform: scaleY(1);
-        transform-origin: 50% 100%;
-        transition: opacity 0.3s, transform 0.5s;
-        background: -moz-linear-gradient(
-          10deg,
-          $clr-secondary 5%,
-          $clr-primary 95%
-        );
-        background: -webkit-linear-gradient(
-          10deg,
-          $clr-secondary 5%,
-          $clr-primary 95%
-        );
-        background: linear-gradient(10deg, $clr-secondary 5%, $clr-primary 95%);
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
+      .far {
+        background: linear-gradient(10deg, $clr-primary 5%, $clr-secondary 95%);
         background-clip: text;
+        -webkit-background-clip: text;
         color: transparent;
+      }
+      .fas {
+        background: linear-gradient(10deg, $clr-primary 5%, $clr-secondary 95%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 1;
+        transform: scale(1);
       }
     }
     &:active {
-      & .far {
-        opacity: 0;
-      }
-      & .fas {
-        opacity: 1;
-        transform: scaleY(1);
-        transform-origin: 50% 100%;
-        transition: opacity 0.3s, transform 0.5s;
-        background: -moz-linear-gradient(
-          10deg,
-          $clr-secondary 5%,
-          $clr-primary 95%
-        );
-        background: -webkit-linear-gradient(
-          10deg,
-          $clr-secondary 5%,
-          $clr-primary 95%
-        );
-        background: linear-gradient(10deg, $clr-secondary 5%, $clr-primary 95%);
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
+      .far {
+        background: linear-gradient(10deg, $clr-primary 5%, $clr-secondary 95%);
         background-clip: text;
+        -webkit-background-clip: text;
         color: transparent;
+      }
+      .fas {
+        background: linear-gradient(10deg, $clr-primary 5%, $clr-secondary 95%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 1;
+        transform: scale(1);
       }
     }
   }
@@ -776,18 +749,6 @@ a {
   & .appearCard {
     animation: appearC 1s ease-in-out both;
   }
-  /*& .appearCard_1 {
-    animation-delay: 0;
-  }
-  & .appearCard_2 {
-    animation-delay: 0.3s;
-  }
-  & .appearCard_3 {
-    animation-delay: 0.6s;
-  }
-  & .appearCard_4 {
-    animation-delay: 0.9s;
-  }*/
   @for $i from 1 through 4 {
     & .appearCard_#{$i} {
       animation-delay: 0.3 * ($i - 1s);
