@@ -10,16 +10,20 @@
     flex-direction: column;
     & h1 {
       @include texte_style(
-        $font-size: 2.3rem,
+        $font-size: 1.6rem,
         $font-weight: 800,
         $color: black
       );
-      @include dimension($width: 50%);
+      @include dimension($width: 80%);
       padding: 3rem 0 1.5rem 0;
     }
     & p {
-      @include texte_style($font-size: 2rem, $font-weight: 400, $color: black);
-      @include dimension($width: 80%);
+      @include texte_style(
+        $font-size: 1.1rem,
+        $font-weight: 400,
+        $color: black
+      );
+      @include dimension($width: 90%);
       padding-bottom: 2rem;
     }
   }
@@ -30,7 +34,7 @@
   flex-direction: column;
   &Title {
     margin: 3rem 0 1.5rem 1rem;
-    @include texte_style($font-size: 2rem, $font-weight: 700, $color: black);
+    @include texte_style($font-size: 1.5rem, $font-weight: 700, $color: black);
   }
   &Contain {
     @include dimension($width: 90%);
@@ -42,7 +46,7 @@
   }
   &Card {
     @include flexbox($display: flex, $justify: flex-start, $align: center);
-    @include dimension($width: 100%, $height: 5rem);
+    @include dimension($width: 100%, $height: 4.5rem);
     background-color: $clr-search-light;
     margin-bottom: 1.5rem;
     border-radius: 1.3rem;
@@ -51,8 +55,8 @@
       @include dimension($width: 30%, $height: 5rem);
     }
     &Number {
-      @include dimension($width: 2rem, $height: 2rem);
-      @include texte_style($font-size: 1.5rem, $color: white);
+      @include dimension($width: 1.5rem, $height: 1.5rem);
+      @include texte_style($font-size: 1.3rem, $color: white);
       @include flexbox($display: flex, $justify: center, $align: center);
       background-color: $clr-primary;
       border-radius: 50%;
@@ -86,27 +90,27 @@
     }
     &Text {
       @include texte_style(
-        $font-size: 1.5rem,
+        $font-size: 1.1rem,
         $font-weight: 500,
         $color: black
       );
       @media screen and (max-width: 270px) {
         @include texte_style(
-          $font-size: 1.2rem,
+          $font-size: 0.9rem,
           $font-weight: 500,
           $color: black
         );
       }
       @media screen and (max-width: 370px) {
         @include texte_style(
-          $font-size: 1.3rem,
+          $font-size: 1rem,
           $font-weight: 500,
           $color: black
         );
       }
       @media screen and (min-width: 1024px) {
         @include texte_style(
-          $font-size: 1.1rem,
+          $font-size: 1.2rem,
           $font-weight: 500,
           $color: black
         );
@@ -127,7 +131,7 @@
   margin-top: 2rem;
   &Title {
     margin: 0 0 1.5rem 1rem;
-    @include texte_style($font-size: 2rem, $font-weight: 700, $color: black);
+    @include texte_style($font-size: 1.5rem, $font-weight: 700, $color: black);
   }
   &Cards {
     @include dimension($width: 92%);
@@ -140,7 +144,7 @@
     }
   }
   &Card {
-    @include dimension($width: 100%, $height: 21rem);
+    @include dimension($width: 100%, $height: 20.5rem);
     border-radius: 2rem;
     background-color: white;
     margin-bottom: 2rem;
@@ -148,7 +152,7 @@
     box-shadow: 0 0.2rem 1rem lighten($clr-shadow, 40%);
     @include position($position: relative);
     @media screen and (min-width: 1024px) {
-      @include dimension($width: 45%, $height: 21rem);
+      @include dimension($width: 45%, $height: 20.5rem);
     }
     &Img {
       @include dimension($width: 100%, $height: 15rem);
@@ -160,13 +164,13 @@
     }
     &Title {
       @include texte_style(
-        $font-size: 1.5rem,
+        $font-size: 1.2rem,
         $font-weight: 600,
         $color: black
       );
     }
     &Text {
-      @include texte_style($font-size: 1.2rem);
+      @include texte_style($font-size: 1.1rem);
     }
     &New {
       @include position($position: absolute, $top: 2rem, $right: 2rem);

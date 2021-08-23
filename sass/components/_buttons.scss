@@ -1,13 +1,13 @@
 /*Style search*/
 .search {
   &Title .btn {
-    @include dimension($width: 45%, $height: 4rem);
+    @include dimension($width: 55%, $height: 3.5rem);
     max-width: 30rem;
     margin-bottom: 3.5rem;
     border: none;
     border-radius: 10rem;
     background: linear-gradient(-5deg, $clr-primary 5%, $clr-secondary 95%);
-    @include texte_style($font-size: 1.3rem, $font-weight: 500, $color: white);
+    @include texte_style($font-size: 0.9rem, $font-weight: 500, $color: white);
     padding: 1rem;
     box-shadow: 0 0.2rem 0.5rem lighten($clr-shadow, 20%);
     cursor: pointer;
@@ -20,11 +20,7 @@
       box-shadow: 0 0.5rem 1rem $clr-shadow;
     }
     @media screen and (max-width: 575px) {
-      @include texte_style(
-        $font-size: 1.2rem,
-        $font-weight: 500,
-        $color: white
-      );
+      @include texte_style($font-size: 1rem, $font-weight: 500, $color: white);
       padding: 0.5rem;
     }
     @media screen and (max-width: 330px) {
@@ -39,9 +35,9 @@
 /*Style Restaurant*/
 .restaurant {
   &Card .btnLike {
-    @include position($position: absolute, $right: 2rem, $bottom: 2rem);
+    @include position($position: absolute, $right: 1.5rem, $bottom: 2.3rem);
     @include dimension($width: 2.5rem, $height: 2rem);
-    @include texte_style($font-size: 2rem);
+    @include texte_style($font-size: 1.7rem);
     cursor: pointer;
     & .far {
       @include position($position: absolute);
@@ -138,8 +134,8 @@
     }
   }
   & .menuLike {
-    @include texte_style($font-size: 2.5rem, $font-weight: 400);
-    @include position($position: absolute, $right: 3.5rem, $top: 3.5rem);
+    @include texte_style($font-size: 2rem, $font-weight: 400);
+    @include position($position: absolute, $right: 2rem, $top: 2rem);
   }
   & .btn {
     @include dimension($width: 45%, $height: 4rem);

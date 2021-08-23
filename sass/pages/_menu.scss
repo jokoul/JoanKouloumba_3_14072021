@@ -27,8 +27,8 @@
     margin: -4rem auto 0 auto;
   }
   &Title {
-    @include texte_style($font-size: 2.5rem, $font-weight: 900, $color: black);
-    padding: 3rem 7rem 2rem 1.5rem;
+    @include texte_style($font-size: 1.6rem, $font-weight: 900, $color: black);
+    padding: 2rem 7rem 2rem 1.5rem;
     font-family: "shrikhand", sans-serif;
     @media screen and (max-width: 300px) {
       @include texte_style($font-size: 2rem, $font-weight: 900, $color: black);
@@ -56,7 +56,7 @@
       text-transform: uppercase;
       margin-left: 0.5rem;
       @include texte_style(
-        $font-size: 1.5rem,
+        $font-size: 1.3rem,
         $font-weight: 400,
         $color: black
       );
@@ -88,7 +88,7 @@
     }
     &Title {
       @include texte_style(
-        $font-size: 1.5rem,
+        $font-size: 1.1rem,
         $font-weight: 500,
         $color: black
       );
@@ -104,11 +104,7 @@
       }
     }
     &Text {
-      @include texte_style(
-        $font-size: 1.2rem,
-        $font-weight: 400,
-        $color: black
-      );
+      @include texte_style($font-size: 1rem, $font-weight: 400, $color: black);
       overflow: hidden;
       text-overflow: ellipsis;
       @media screen and (max-width: 360px) {
@@ -122,10 +118,10 @@
     &Price {
       @include dimension($width: 3rem, $height: 50%);
       @include flexbox($display: flex, $justify: center, $align: flex-end);
-      padding-top: 1.2rem;
+      padding-top: 0.5rem;
       margin: 0 1rem 0 0.5rem;
       @include texte_style(
-        $font-size: 1.3rem,
+        $font-size: 1.1rem,
         $font-weight: 700,
         $color: black
       );

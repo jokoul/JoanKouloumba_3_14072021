@@ -85,7 +85,7 @@ a {
 
 /*Style Instruction*/
 .instructionCard i {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: rgba(80, 80, 80, 0.603);
 }
 
@@ -139,14 +139,14 @@ a {
 
 /*Style search*/
 .searchTitle .btn {
-  width: 45%;
-  height: 4rem;
+  width: 55%;
+  height: 3.5rem;
   max-width: 30rem;
   margin-bottom: 3.5rem;
   border: none;
   border-radius: 10rem;
   background: linear-gradient(-5deg, #9356dc 5%, #ff79da 95%);
-  font-size: 1.3rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: white;
   padding: 1rem;
@@ -163,7 +163,7 @@ a {
 }
 @media screen and (max-width: 575px) {
   .searchTitle .btn {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
     color: white;
     padding: 0.5rem;
@@ -181,12 +181,12 @@ a {
 .restaurantCard .btnLike {
   position: absolute;
   top: unset;
-  right: 2rem;
-  bottom: 2rem;
+  right: 1.5rem;
+  bottom: 2.3rem;
   left: unset;
   width: 2.5rem;
   height: 2rem;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: unset;
   color: unset;
   cursor: pointer;
@@ -299,12 +299,12 @@ a {
   transform: scale(1);
 }
 .menu .menuLike {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 400;
   color: unset;
   position: absolute;
-  top: 3.5rem;
-  right: 3.5rem;
+  top: 2rem;
+  right: 2rem;
   bottom: unset;
   left: unset;
 }
@@ -428,7 +428,7 @@ a {
   background-color: white;
 }
 .headerLogo {
-  width: 15rem;
+  width: 10rem;
   height: unset;
 }
 @media screen and (max-width: 300px) {
@@ -511,18 +511,18 @@ a {
   flex-direction: column;
 }
 .searchTitle h1 {
-  font-size: 2.3rem;
+  font-size: 1.6rem;
   font-weight: 800;
   color: black;
-  width: 50%;
+  width: 80%;
   height: unset;
   padding: 3rem 0 1.5rem 0;
 }
 .searchTitle p {
-  font-size: 2rem;
+  font-size: 1.1rem;
   font-weight: 400;
   color: black;
-  width: 80%;
+  width: 90%;
   height: unset;
   padding-bottom: 2rem;
 }
@@ -536,7 +536,7 @@ a {
 }
 .instructionTitle {
   margin: 3rem 0 1.5rem 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: black;
 }
@@ -559,7 +559,7 @@ a {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 5rem;
+  height: 4.5rem;
   background-color: rgba(233, 233, 233, 0.603);
   margin-bottom: 1.5rem;
   border-radius: 1.3rem;
@@ -572,9 +572,9 @@ a {
   }
 }
 .instructionCardNumber {
-  width: 2rem;
-  height: 2rem;
-  font-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.3rem;
   font-weight: unset;
   color: white;
   display: flex;
@@ -627,27 +627,27 @@ a {
   }
 }
 .instructionCardText {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: black;
 }
 @media screen and (max-width: 270px) {
   .instructionCardText {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: black;
   }
 }
 @media screen and (max-width: 370px) {
   .instructionCardText {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 500;
     color: black;
   }
 }
 @media screen and (min-width: 1024px) {
   .instructionCardText {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: black;
   }
@@ -667,7 +667,7 @@ a {
 }
 .restaurantTitle {
   margin: 0 0 1.5rem 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: black;
 }
@@ -688,7 +688,7 @@ a {
 }
 .restaurantCard {
   width: 100%;
-  height: 21rem;
+  height: 20.5rem;
   border-radius: 2rem;
   background-color: white;
   margin-bottom: 2rem;
@@ -703,7 +703,7 @@ a {
 @media screen and (min-width: 1024px) {
   .restaurantCard {
     width: 45%;
-    height: 21rem;
+    height: 20.5rem;
   }
 }
 .restaurantCardImg {
@@ -716,12 +716,12 @@ a {
   padding: 1rem 2rem 1.5rem 1rem;
 }
 .restaurantCardTitle {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: black;
 }
 .restaurantCardText {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: unset;
   color: unset;
 }
@@ -786,10 +786,10 @@ a {
   }
 }
 .menuTitle {
-  font-size: 2.5rem;
+  font-size: 1.6rem;
   font-weight: 900;
   color: black;
-  padding: 3rem 7rem 2rem 1.5rem;
+  padding: 2rem 7rem 2rem 1.5rem;
   font-family: "shrikhand", sans-serif;
 }
 @media screen and (max-width: 300px) {
@@ -826,7 +826,7 @@ a {
 .menuSubMenuTitle {
   text-transform: uppercase;
   margin-left: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 400;
   color: black;
 }
@@ -862,7 +862,7 @@ a {
   }
 }
 .menuCardTitle {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: black;
   margin-bottom: 0.3rem;
@@ -877,7 +877,7 @@ a {
   }
 }
 .menuCardText {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
   color: black;
   overflow: hidden;
@@ -896,9 +896,9 @@ a {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding-top: 1.2rem;
+  padding-top: 0.5rem;
   margin: 0 1rem 0 0.5rem;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: black;
 }
