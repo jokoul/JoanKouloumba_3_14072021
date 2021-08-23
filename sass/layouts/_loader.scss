@@ -1,0 +1,39 @@
+/*Style Spinner*/
+.spinner {
+  z-index: 1;
+  @include position($position: fixed, $top: 0, $left: 0);
+  @include dimension($width: 100%, $height: 100%);
+  @include flexbox($display: flex, $justify: center, $align: center);
+  flex-direction: column;
+  background-color: white;
+  animation: spinHide 1s 3.5s forwards;
+  &Contain {
+    @include position($position: relative);
+    @include dimension($width: 15rem, $height: 15rem);
+  }
+  &Load {
+    @include position($position: absolute);
+    border-radius: 100%;
+    animation: spin 3s 0.5s ease-in-out infinite;
+  }
+  & .load1 {
+    border-top: 1rem solid $clr-primary;
+    @include dimension($width: 13rem, $height: 13rem);
+  }
+  & .load2 {
+    border-right: 1rem solid $clr-secondary;
+    @include dimension($width: 12rem, $height: 12rem);
+  }
+  & .load3 {
+    border-bottom: 1rem solid $clr-tertiary;
+    @include dimension($width: 11rem, $height: 11rem);
+  }
+  & .load4 {
+    border-left: 1rem solid $clr-shadow;
+    @include dimension($width: 10rem, $height: 10rem);
+  }
+  &Text {
+    font-family: "shrikhand", sans-serif;
+    @include texte_style($font-size: 2rem, $font-weight: 700);
+  }
+}

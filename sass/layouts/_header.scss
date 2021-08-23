@@ -1,0 +1,20 @@
+/*Style HEADER*/
+.header {
+  padding-top: 1rem;
+  @include dimension($height: 4rem);
+  @include flexbox($display: flex, $justify: center, $align: center);
+  background-color: white;
+  &Logo {
+    @include dimension($width: 15rem);
+    @media screen and (max-width: 300px) {
+      @include dimension($width: 10rem);
+    }
+  }
+  &Return {
+    @include texte_style($font-size: 1.5rem);
+    @include position($position: absolute, $top: 2rem, $left: 0.5rem);
+  }
+}
+.shadow {
+  box-shadow: 0 0.3rem 0.5rem $clr-shadow;
+}

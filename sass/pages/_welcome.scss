@@ -1,0 +1,183 @@
+/*Style search*/
+.search {
+  @include flexbox($display: flex, $justify: center, $align: center);
+  flex-direction: column;
+  &Title {
+    background-color: $clr-search-light;
+    text-align: center;
+    @include dimension($width: 100%);
+    @include flexbox($display: flex, $justify: center, $align: center);
+    flex-direction: column;
+    & h1 {
+      @include texte_style(
+        $font-size: 2.3rem,
+        $font-weight: 800,
+        $color: black
+      );
+      @include dimension($width: 50%);
+      padding: 3rem 0 1.5rem 0;
+    }
+    & p {
+      @include texte_style($font-size: 2rem, $font-weight: 400, $color: black);
+      @include dimension($width: 80%);
+      padding-bottom: 2rem;
+    }
+  }
+}
+/*Style Instruction*/
+.instruction {
+  @include flexbox($display: flex, $justify: space-between, $align: flex-start);
+  flex-direction: column;
+  &Title {
+    margin: 3rem 0 1.5rem 1rem;
+    @include texte_style($font-size: 2rem, $font-weight: 700, $color: black);
+  }
+  &Contain {
+    @include dimension($width: 90%);
+    margin: 0 auto;
+    @media screen and (min-width: 1024px) {
+      @include flexbox($display: flex, $justify: space-between, $align: center);
+      @include dimension($width: 95%);
+    }
+  }
+  &Card {
+    @include flexbox($display: flex, $justify: flex-start, $align: center);
+    @include dimension($width: 100%, $height: 5rem);
+    background-color: $clr-search-light;
+    margin-bottom: 1.5rem;
+    border-radius: 1.3rem;
+    box-shadow: 0 0 1rem lighten($clr-shadow, 40%);
+    @media screen and (min-width: 1024px) {
+      @include dimension($width: 30%, $height: 5rem);
+    }
+    &Number {
+      @include dimension($width: 2rem, $height: 2rem);
+      @include texte_style($font-size: 1.5rem, $color: white);
+      @include flexbox($display: flex, $justify: center, $align: center);
+      background-color: $clr-primary;
+      border-radius: 50%;
+      margin-right: 2rem;
+      margin-left: -1rem;
+      @media screen and (max-width: 270px) {
+        margin-right: 1rem;
+        margin-left: -0.5rem;
+        @include texte_style($font-size: 1rem, $color: white);
+      }
+      @media screen and (max-width: 370px) {
+        margin-right: 1.5rem;
+        margin-left: -0.75rem;
+        @include texte_style($font-size: 1.2rem, $color: white);
+      }
+      @media screen and (min-width: 1024px) {
+        margin-right: 1rem;
+      }
+    }
+    & i {
+      margin-right: 2rem;
+      @media screen and (max-width: 270px) {
+        margin-right: 1rem;
+      }
+      @media screen and (max-width: 370px) {
+        margin-right: 1.5rem;
+      }
+      @media screen and (min-width: 1024px) {
+        margin-right: 1rem;
+      }
+    }
+    &Text {
+      @include texte_style(
+        $font-size: 1.5rem,
+        $font-weight: 500,
+        $color: black
+      );
+      @media screen and (max-width: 270px) {
+        @include texte_style(
+          $font-size: 1.2rem,
+          $font-weight: 500,
+          $color: black
+        );
+      }
+      @media screen and (max-width: 370px) {
+        @include texte_style(
+          $font-size: 1.3rem,
+          $font-weight: 500,
+          $color: black
+        );
+      }
+      @media screen and (min-width: 1024px) {
+        @include texte_style(
+          $font-size: 1.1rem,
+          $font-weight: 500,
+          $color: black
+        );
+      }
+    }
+    &:hover {
+      background-color: $clr-primary-light;
+    }
+    &:active {
+      background-color: $clr-primary-light;
+    }
+  }
+}
+/*Style Restaurant*/
+.restaurant {
+  background-color: $clr-search-light;
+  padding-top: 3rem;
+  margin-top: 2rem;
+  &Title {
+    margin: 0 0 1.5rem 1rem;
+    @include texte_style($font-size: 2rem, $font-weight: 700, $color: black);
+  }
+  &Cards {
+    @include dimension($width: 92%);
+    margin: 0 auto;
+    @include flexbox($display: flex, $justify: space-around, $align: center);
+    flex-direction: column;
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+  &Card {
+    @include dimension($width: 100%, $height: 21rem);
+    border-radius: 2rem;
+    background-color: white;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    box-shadow: 0 0.2rem 1rem lighten($clr-shadow, 40%);
+    @include position($position: relative);
+    @media screen and (min-width: 1024px) {
+      @include dimension($width: 45%, $height: 21rem);
+    }
+    &Img {
+      @include dimension($width: 100%, $height: 15rem);
+      border-radius: 2rem 2rem 0 0;
+      object-fit: cover;
+    }
+    &Legend {
+      padding: 1rem 2rem 1.5rem 1rem;
+    }
+    &Title {
+      @include texte_style(
+        $font-size: 1.5rem,
+        $font-weight: 600,
+        $color: black
+      );
+    }
+    &Text {
+      @include texte_style($font-size: 1.2rem);
+    }
+    &New {
+      @include position($position: absolute, $top: 2rem, $right: 2rem);
+      @include texte_style(
+        $font-size: 1.1rem,
+        $font-weight: 500,
+        $color: $clr-new
+      );
+      background-color: $clr-new-light;
+      border-radius: 0.2rem;
+      padding: 0.7rem;
+    }
+  }
+}

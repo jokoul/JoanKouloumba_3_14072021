@@ -1,0 +1,30 @@
+/*Style search*/
+.search {
+  &Form {
+    @include flexbox($display: flex, $justify: center, $align: center);
+    @include dimension($width: 100%, $height: 3.5rem);
+    background-color: $clr-search;
+    & input {
+      @include dimension($width: 30%, $height: 2rem);
+      @include texte_style(
+        $font-size: 1.2rem,
+        $font-weight: 500,
+        $color: black
+      );
+      padding: 0.5rem 0.5rem 0 0.5rem;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &::placeholder {
+        @include texte_style(
+          $font-size: 1.2rem,
+          $font-weight: 700,
+          $color: black
+        );
+      }
+    }
+  }
+}

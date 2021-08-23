@@ -1,0 +1,20 @@
+/*Style général*/
+* {
+  margin: 0;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  @include texte_style($font-size: 1rem, $font-weight: 400);
+  @include position($position: relative);
+  @media screen and (min-width: 1024px) {
+    background: linear-gradient(
+      0deg,
+      $clr-secondary-light,
+      $clr-tertiary-strong
+    );
+  }
+}
+a {
+  text-decoration: none;
+  @include texte_style;
+}

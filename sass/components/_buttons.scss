@@ -1,0 +1,185 @@
+/*Style search*/
+.search {
+  &Title .btn {
+    @include dimension($width: 45%, $height: 4rem);
+    max-width: 30rem;
+    margin-bottom: 3.5rem;
+    border: none;
+    border-radius: 10rem;
+    background: linear-gradient(-5deg, $clr-primary 5%, $clr-secondary 95%);
+    @include texte_style($font-size: 1.3rem, $font-weight: 500, $color: white);
+    padding: 1rem;
+    box-shadow: 0 0.2rem 0.5rem lighten($clr-shadow, 20%);
+    cursor: pointer;
+    &:hover {
+      filter: brightness(1.2);
+      box-shadow: 0 0.5rem 1rem $clr-shadow;
+    }
+    &:active {
+      filter: brightness(1.2);
+      box-shadow: 0 0.5rem 1rem $clr-shadow;
+    }
+    @media screen and (max-width: 575px) {
+      @include texte_style(
+        $font-size: 1.2rem,
+        $font-weight: 500,
+        $color: white
+      );
+      padding: 0.5rem;
+    }
+    @media screen and (max-width: 330px) {
+      @include texte_style(
+        $font-size: 0.9rem,
+        $font-weight: 500,
+        $color: white
+      );
+    }
+  }
+}
+/*Style Restaurant*/
+.restaurant {
+  &Card .btnLike {
+    @include position($position: absolute, $right: 2rem, $bottom: 2rem);
+    @include dimension($width: 2.5rem, $height: 2rem);
+    @include texte_style($font-size: 2rem);
+    cursor: pointer;
+    & .far {
+      @include position($position: absolute);
+    }
+    & .fas {
+      @include position($position: absolute);
+      opacity: 0;
+      transform: scale(0);
+      transform-origin: 50% 100%;
+      transition: opacity 0.5s, transform 0.5s;
+    }
+    &:hover {
+      .far {
+        background: linear-gradient(10deg, $clr-primary 5%, $clr-secondary 95%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .fas {
+        background: linear-gradient(10deg, $clr-primary 5%, $clr-secondary 95%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    &:active {
+      .far {
+        background: linear-gradient(10deg, $clr-primary 5%, $clr-secondary 95%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .fas {
+        background: linear-gradient(10deg, $clr-primary 5%, $clr-secondary 95%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+}
+/*Style Menu*/
+.menu {
+  & .btnLike {
+    @include position($position: absolute, $right: 2rem, $bottom: 2rem);
+    @include dimension($width: 2.5rem, $height: 2rem);
+    @include texte_style($font-size: 2rem);
+    cursor: pointer;
+    & .far {
+      @include position($position: absolute);
+    }
+    & .fas {
+      @include position($position: absolute);
+      opacity: 0;
+      transform: scale(0);
+      transform-origin: 50% 100%;
+      transition: opacity 0.5s, transform 0.5s;
+    }
+    &:hover {
+      .far {
+        background: linear-gradient(10deg, $clr-primary 5%, $clr-secondary 95%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .fas {
+        background: linear-gradient(10deg, $clr-primary 5%, $clr-secondary 95%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    &:active {
+      .far {
+        background: linear-gradient(10deg, $clr-primary 5%, $clr-secondary 95%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .fas {
+        background: linear-gradient(10deg, $clr-primary 5%, $clr-secondary 95%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+  & .menuLike {
+    @include texte_style($font-size: 2.5rem, $font-weight: 400);
+    @include position($position: absolute, $right: 3.5rem, $top: 3.5rem);
+  }
+  & .btn {
+    @include dimension($width: 45%, $height: 4rem);
+    max-width: 30rem;
+    margin-bottom: 3.5rem;
+    border: none;
+    border-radius: 10rem;
+    cursor: pointer;
+    background: linear-gradient(-5deg, $clr-primary 5%, $clr-secondary 95%);
+    @include texte_style($font-size: 1.3rem, $font-weight: 500, $color: white);
+    padding: 1rem;
+    box-shadow: 0 0.2rem 0.5rem lighten($clr-shadow, 20%);
+    &:hover {
+      filter: brightness(1.2);
+      box-shadow: 0 0.5rem 1rem $clr-shadow;
+    }
+    &:active {
+      filter: brightness(1.2);
+      box-shadow: 0 0.5rem 1rem $clr-shadow;
+    }
+    @media screen and (max-width: 575px) {
+      @include texte_style(
+        $font-size: 1.2rem,
+        $font-weight: 500,
+        $color: white
+      );
+      padding: 0.5rem;
+    }
+    @media screen and (max-width: 330px) {
+      @include texte_style(
+        $font-size: 0.9rem,
+        $font-weight: 500,
+        $color: white
+      );
+    }
+  }
+  &Submit {
+    @include flexbox($display: flex, $justify: center, $align: center);
+    & .btnMenu {
+      margin-top: 2rem;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+/*Style search*/
+.searchForm i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+/*Style Instruction*/
+.instructionCard i {
+  font-size: 1.5rem;
+  color: darken($clr-search, 50%);
+}
+.instructionCard:hover .fas {
+  color: $clr-primary;
+}
+.instructionCard:active .fas {
+  color: $clr-primary;
+}
+/*Style Footer*/
+.footerListItem .fa-hands-helping {
+  font-size: 0.9rem;
+}
+/*Style Menu*/
+.menuCardCheck i {
+  font-size: 1.7rem;
+  color: white;
+}

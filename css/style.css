@@ -77,39 +77,282 @@ a {
   color: unset;
 }
 
-/*Style HEADER*/
-.header {
-  padding-top: 1rem;
-  width: unset;
-  height: 4rem;
+/*Style search*/
+.searchForm i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+/*Style Instruction*/
+.instructionCard i {
+  font-size: 1.5rem;
+  color: rgba(80, 80, 80, 0.603);
+}
+
+.instructionCard:hover .fas {
+  color: #9356dc;
+}
+
+.instructionCard:active .fas {
+  color: #9356dc;
+}
+
+/*Style Footer*/
+.footerListItem .fa-hands-helping {
+  font-size: 0.9rem;
+}
+
+/*Style Menu*/
+.menuCardCheck i {
+  font-size: 1.7rem;
+  color: white;
+}
+
+/*Style search*/
+.searchForm {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  width: 100%;
+  height: 3.5rem;
+  background-color: rgba(207, 207, 207, 0.603);
 }
-.headerLogo {
-  width: 15rem;
-  height: unset;
+.searchForm input {
+  width: 30%;
+  height: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: black;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-@media screen and (max-width: 300px) {
-  .headerLogo {
-    width: 10rem;
-    height: unset;
-  }
-}
-.headerReturn {
-  font-size: 1.5rem;
-  font-weight: unset;
-  color: unset;
-  position: absolute;
-  top: 2rem;
-  right: unset;
-  bottom: unset;
-  left: 0.5rem;
+.searchForm input::placeholder {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: black;
 }
 
-.shadow {
-  box-shadow: 0 0.3rem 0.5rem #646464;
+/*Style search*/
+.searchTitle .btn {
+  width: 45%;
+  height: 4rem;
+  max-width: 30rem;
+  margin-bottom: 3.5rem;
+  border: none;
+  border-radius: 10rem;
+  background: linear-gradient(-5deg, #9356dc 5%, #ff79da 95%);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 0.2rem 0.5rem #979797;
+  cursor: pointer;
+}
+.searchTitle .btn:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 0.5rem 1rem #646464;
+}
+.searchTitle .btn:active {
+  filter: brightness(1.2);
+  box-shadow: 0 0.5rem 1rem #646464;
+}
+@media screen and (max-width: 575px) {
+  .searchTitle .btn {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 330px) {
+  .searchTitle .btn {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+  }
+}
+
+/*Style Restaurant*/
+.restaurantCard .btnLike {
+  position: absolute;
+  top: unset;
+  right: 2rem;
+  bottom: 2rem;
+  left: unset;
+  width: 2.5rem;
+  height: 2rem;
+  font-size: 2rem;
+  font-weight: unset;
+  color: unset;
+  cursor: pointer;
+}
+.restaurantCard .btnLike .far {
+  position: absolute;
+  top: unset;
+  right: unset;
+  bottom: unset;
+  left: unset;
+}
+.restaurantCard .btnLike .fas {
+  position: absolute;
+  top: unset;
+  right: unset;
+  bottom: unset;
+  left: unset;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: 50% 100%;
+  transition: opacity 0.5s, transform 0.5s;
+}
+.restaurantCard .btnLike:hover .far {
+  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.restaurantCard .btnLike:hover .fas {
+  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 1;
+  transform: scale(1);
+}
+.restaurantCard .btnLike:active .far {
+  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.restaurantCard .btnLike:active .fas {
+  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*Style Menu*/
+.menu .btnLike {
+  position: absolute;
+  top: unset;
+  right: 2rem;
+  bottom: 2rem;
+  left: unset;
+  width: 2.5rem;
+  height: 2rem;
+  font-size: 2rem;
+  font-weight: unset;
+  color: unset;
+  cursor: pointer;
+}
+.menu .btnLike .far {
+  position: absolute;
+  top: unset;
+  right: unset;
+  bottom: unset;
+  left: unset;
+}
+.menu .btnLike .fas {
+  position: absolute;
+  top: unset;
+  right: unset;
+  bottom: unset;
+  left: unset;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: 50% 100%;
+  transition: opacity 0.5s, transform 0.5s;
+}
+.menu .btnLike:hover .far {
+  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.menu .btnLike:hover .fas {
+  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 1;
+  transform: scale(1);
+}
+.menu .btnLike:active .far {
+  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.menu .btnLike:active .fas {
+  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 1;
+  transform: scale(1);
+}
+.menu .menuLike {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: unset;
+  position: absolute;
+  top: 3.5rem;
+  right: 3.5rem;
+  bottom: unset;
+  left: unset;
+}
+.menu .btn {
+  width: 45%;
+  height: 4rem;
+  max-width: 30rem;
+  margin-bottom: 3.5rem;
+  border: none;
+  border-radius: 10rem;
+  cursor: pointer;
+  background: linear-gradient(-5deg, #9356dc 5%, #ff79da 95%);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 0.2rem 0.5rem #979797;
+}
+.menu .btn:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 0.5rem 1rem #646464;
+}
+.menu .btn:active {
+  filter: brightness(1.2);
+  box-shadow: 0 0.5rem 1rem #646464;
+}
+@media screen and (max-width: 575px) {
+  .menu .btn {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 330px) {
+  .menu .btn {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+  }
+}
+.menuSubmit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menuSubmit .btnMenu {
+  margin-top: 2rem;
 }
 
 /*Style Spinner*/
@@ -174,43 +417,88 @@ a {
   color: unset;
 }
 
+/*Style HEADER*/
+.header {
+  padding-top: 1rem;
+  width: unset;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.headerLogo {
+  width: 15rem;
+  height: unset;
+}
+@media screen and (max-width: 300px) {
+  .headerLogo {
+    width: 10rem;
+    height: unset;
+  }
+}
+.headerReturn {
+  font-size: 1.5rem;
+  font-weight: unset;
+  color: unset;
+  position: absolute;
+  top: 2rem;
+  right: unset;
+  bottom: unset;
+  left: 0.5rem;
+}
+
+.shadow {
+  box-shadow: 0 0.3rem 0.5rem #646464;
+}
+
+/*Style Footer*/
+.footer {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: white;
+  background-color: #424242;
+  padding-bottom: 2.5rem;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.footerLogo {
+  filter: invert(100%);
+  margin: 2rem 0 0.5rem 2.5rem;
+  width: 8rem;
+  height: unset;
+}
+.footerList {
+  list-style-type: none;
+}
+@media screen and (min-width: 1024px) {
+  .footerList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: unset;
+  }
+}
+.footerListItem {
+  margin-top: 1rem;
+}
+.footerListItem i {
+  margin-right: 0.5rem;
+}
+
 /*Style search*/
 .search {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-.searchForm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 3.5rem;
-  background-color: rgba(207, 207, 207, 0.603);
-}
-.searchForm i {
-  font-size: 1.5rem;
-  margin-right: 0.5rem;
-}
-.searchForm input {
-  width: 30%;
-  height: 2rem;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: black;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.searchForm input::placeholder {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: black;
 }
 .searchTitle {
   background-color: rgba(233, 233, 233, 0.603);
@@ -237,44 +525,6 @@ a {
   width: 80%;
   height: unset;
   padding-bottom: 2rem;
-}
-.searchTitle .btn {
-  width: 45%;
-  height: 4rem;
-  max-width: 30rem;
-  margin-bottom: 3.5rem;
-  border: none;
-  border-radius: 10rem;
-  background: linear-gradient(-5deg, #9356dc 5%, #ff79da 95%);
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: white;
-  padding: 1rem;
-  box-shadow: 0 0.2rem 0.5rem #979797;
-  cursor: pointer;
-}
-.searchTitle .btn:hover {
-  filter: brightness(1.2);
-  box-shadow: 0 0.5rem 1rem #646464;
-}
-.searchTitle .btn:active {
-  filter: brightness(1.2);
-  box-shadow: 0 0.5rem 1rem #646464;
-}
-@media screen and (max-width: 575px) {
-  .searchTitle .btn {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: white;
-    padding: 0.5rem;
-  }
-}
-@media screen and (max-width: 330px) {
-  .searchTitle .btn {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: white;
-  }
 }
 
 /*Style Instruction*/
@@ -359,8 +609,6 @@ a {
   }
 }
 .instructionCard i {
-  font-size: 1.5rem;
-  color: rgba(80, 80, 80, 0.603);
   margin-right: 2rem;
 }
 @media screen and (max-width: 270px) {
@@ -407,14 +655,8 @@ a {
 .instructionCard:hover {
   background-color: #f3eaff;
 }
-.instructionCard:hover .fas {
-  color: #9356dc;
-}
 .instructionCard:active {
   background-color: #f3eaff;
-}
-.instructionCard:active .fas {
-  color: #9356dc;
 }
 
 /*Style Restaurant*/
@@ -450,7 +692,6 @@ a {
   border-radius: 2rem;
   background-color: white;
   margin-bottom: 2rem;
-  /*padding-bottom: 0.5rem;*/
   cursor: pointer;
   box-shadow: 0 0.2rem 1rem #cacaca;
   position: relative;
@@ -496,109 +737,6 @@ a {
   background-color: #71ffe0;
   border-radius: 0.2rem;
   padding: 0.7rem;
-}
-.restaurantCard .btnLike {
-  position: absolute;
-  top: unset;
-  right: 2rem;
-  bottom: 2rem;
-  left: unset;
-  width: 2.5rem;
-  height: 2rem;
-  font-size: 2rem;
-  font-weight: unset;
-  color: unset;
-  cursor: pointer;
-}
-.restaurantCard .btnLike .far {
-  position: absolute;
-  top: unset;
-  right: unset;
-  bottom: unset;
-  left: unset;
-}
-.restaurantCard .btnLike .fas {
-  position: absolute;
-  top: unset;
-  right: unset;
-  bottom: unset;
-  left: unset;
-  opacity: 0;
-  transform: scale(0);
-  transform-origin: 50% 100%;
-  transition: opacity 0.5s, transform 0.5s;
-}
-.restaurantCard .btnLike:hover .far {
-  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-.restaurantCard .btnLike:hover .fas {
-  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  opacity: 1;
-  transform: scale(1);
-}
-.restaurantCard .btnLike:active .far {
-  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-.restaurantCard .btnLike:active .fas {
-  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  opacity: 1;
-  transform: scale(1);
-}
-
-/*Style Footer*/
-.footer {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: white;
-  background-color: #424242;
-  padding-bottom: 2.5rem;
-}
-@media screen and (min-width: 768px) {
-  .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-}
-.footerLogo {
-  filter: invert(100%);
-  margin: 2rem 0 0.5rem 2.5rem;
-  width: 8rem;
-  height: unset;
-}
-.footerList {
-  list-style-type: none;
-}
-@media screen and (min-width: 1024px) {
-  .footerList {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    height: unset;
-  }
-}
-.footerListItem {
-  margin-top: 1rem;
-}
-.footerListItem i {
-  margin-right: 0.5rem;
-}
-.footerListItem .fa-hands-helping {
-  font-size: 0.9rem;
 }
 
 /*Style Banner*/
@@ -661,75 +799,6 @@ a {
     color: black;
     padding: 3rem 6rem 2rem 1.5rem;
   }
-}
-.menu .btnLike {
-  position: absolute;
-  top: unset;
-  right: 2rem;
-  bottom: 2rem;
-  left: unset;
-  width: 2.5rem;
-  height: 2rem;
-  font-size: 2rem;
-  font-weight: unset;
-  color: unset;
-  cursor: pointer;
-}
-.menu .btnLike .far {
-  position: absolute;
-  top: unset;
-  right: unset;
-  bottom: unset;
-  left: unset;
-}
-.menu .btnLike .fas {
-  position: absolute;
-  top: unset;
-  right: unset;
-  bottom: unset;
-  left: unset;
-  opacity: 0;
-  transform: scale(0);
-  transform-origin: 50% 100%;
-  transition: opacity 0.5s, transform 0.5s;
-}
-.menu .btnLike:hover .far {
-  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-.menu .btnLike:hover .fas {
-  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  opacity: 1;
-  transform: scale(1);
-}
-.menu .btnLike:active .far {
-  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-.menu .btnLike:active .fas {
-  background: linear-gradient(10deg, #9356dc 5%, #ff79da 95%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  opacity: 1;
-  transform: scale(1);
-}
-.menu .menuLike {
-  font-size: 2.5rem;
-  font-weight: 400;
-  color: unset;
-  position: absolute;
-  top: 3.5rem;
-  right: 3.5rem;
-  bottom: unset;
-  left: unset;
 }
 .menuContain {
   width: 90%;
@@ -858,10 +927,6 @@ a {
   border-radius: 0 1rem 1rem 0;
   margin-right: -5rem;
 }
-.menuCardCheck i {
-  font-size: 1.7rem;
-  color: white;
-}
 .menuCard:hover .animateCheck {
   animation: check 0.5s ease-in-out forwards;
 }
@@ -888,52 +953,6 @@ a {
 }
 .menu .appearCard_4 {
   animation-delay: 0.9s;
-}
-.menu .btn {
-  width: 45%;
-  height: 4rem;
-  max-width: 30rem;
-  margin-bottom: 3.5rem;
-  border: none;
-  border-radius: 10rem;
-  cursor: pointer;
-  background: linear-gradient(-5deg, #9356dc 5%, #ff79da 95%);
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: white;
-  padding: 1rem;
-  box-shadow: 0 0.2rem 0.5rem #979797;
-}
-.menu .btn:hover {
-  filter: brightness(1.2);
-  box-shadow: 0 0.5rem 1rem #646464;
-}
-.menu .btn:active {
-  filter: brightness(1.2);
-  box-shadow: 0 0.5rem 1rem #646464;
-}
-@media screen and (max-width: 575px) {
-  .menu .btn {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: white;
-    padding: 0.5rem;
-  }
-}
-@media screen and (max-width: 330px) {
-  .menu .btn {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: white;
-  }
-}
-.menuSubmit {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.menuSubmit .btnMenu {
-  margin-top: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

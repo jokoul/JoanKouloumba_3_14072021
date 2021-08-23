@@ -1,0 +1,177 @@
+/*Style Banner*/
+.banner {
+  @include dimension($width: 100%);
+  & .adjustMenu_2 {
+    margin: -7rem 0 -7rem 0;
+  }
+  &Img {
+    @include dimension($width: 100%);
+    @include position($position: relative);
+    object-fit: cover;
+    z-index: -1;
+    @media screen and (min-width: 1024px) {
+      @include dimension($width: 100%, $height: 30rem);
+    }
+  }
+}
+/*Style Menu*/
+.menu {
+  @include position($position: relative);
+  background-color: $clr-menu;
+  border: none;
+  border-radius: 3rem 3rem 0 0;
+  margin-top: -4rem;
+  padding-bottom: 1rem;
+  @media screen and (min-width: 1024px) and (max-width: 1400px) {
+    @include dimension($width: 80%);
+    margin: -4rem auto 0 auto;
+  }
+  &Title {
+    @include texte_style($font-size: 2.5rem, $font-weight: 900, $color: black);
+    padding: 3rem 7rem 2rem 1.5rem;
+    font-family: "shrikhand", sans-serif;
+    @media screen and (max-width: 300px) {
+      @include texte_style($font-size: 2rem, $font-weight: 900, $color: black);
+      padding: 3rem 6rem 2rem 1.5rem;
+    }
+  }
+  &Contain {
+    @include dimension($width: 90%);
+    margin: 0 auto;
+    @media screen and (min-width: 1400px) {
+      @include flexbox(
+        $display: flex,
+        $justify: space-around,
+        $align: flex-start
+      );
+      @include dimension($width: 100%);
+    }
+  }
+  &SubMenu {
+    margin-bottom: 1.5rem;
+    @media screen and (min-width: 1400px) {
+      @include dimension($width: 30%);
+    }
+    &Title {
+      text-transform: uppercase;
+      margin-left: 0.5rem;
+      @include texte_style(
+        $font-size: 1.5rem,
+        $font-weight: 400,
+        $color: black
+      );
+      & .underLine {
+        @include dimension($width: 3.7rem, $height: 0.3rem);
+        background-color: $clr-tertiary;
+        margin: 0.3rem 0 1.3rem 0;
+      }
+    }
+  }
+  &Card {
+    @include dimension($width: 100%, $height: 5rem);
+    @include flexbox($display: flex, $justify: space-between, $align: center);
+    border-radius: 1rem;
+    background-color: white;
+    box-shadow: 0 0.2rem 1rem lighten($clr-shadow, 40%);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    &Legend {
+      margin-left: 1rem;
+      flex: auto;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @media screen and (max-width: 360px) {
+        margin-left: 0.2rem;
+      }
+    }
+    &Title {
+      @include texte_style(
+        $font-size: 1.5rem,
+        $font-weight: 500,
+        $color: black
+      );
+      margin-bottom: 0.3rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @media screen and (max-width: 360px) {
+        @include texte_style(
+          $font-size: 1rem,
+          $font-weight: 500,
+          $color: black
+        );
+      }
+    }
+    &Text {
+      @include texte_style(
+        $font-size: 1.2rem,
+        $font-weight: 400,
+        $color: black
+      );
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @media screen and (max-width: 360px) {
+        @include texte_style(
+          $font-size: 0.9rem,
+          $font-weight: 400,
+          $color: black
+        );
+      }
+    }
+    &Price {
+      @include dimension($width: 3rem, $height: 50%);
+      @include flexbox($display: flex, $justify: center, $align: flex-end);
+      padding-top: 1.2rem;
+      margin: 0 1rem 0 0.5rem;
+      @include texte_style(
+        $font-size: 1.3rem,
+        $font-weight: 700,
+        $color: black
+      );
+      @media screen and (max-width: 360px) {
+        @include dimension($width: 2rem, $height: 50%);
+        @include flexbox(
+          $display: flex,
+          $justify: flex-start,
+          $align: flex-end
+        );
+        margin: 0;
+        padding-right: 0.2rem;
+        padding-top: 0.5rem;
+        @include texte_style(
+          $font-size: 1rem,
+          $font-weight: 700,
+          $color: black
+        );
+      }
+    }
+    &Check {
+      @include dimension($width: 5rem, $height: 100%);
+      @include flexbox($display: flex, $justify: center, $align: center);
+      background-color: $clr-tertiary;
+      border-radius: 0 1rem 1rem 0;
+      margin-right: -5rem;
+    }
+    &:hover .animateCheck {
+      animation: check 0.5s ease-in-out forwards;
+    }
+    &:hover .animateCircle {
+      animation: circle 0.5s ease-in-out forwards;
+    }
+    &:active .animateCheck {
+      animation: check 0.5s ease-in-out forwards;
+    }
+    &:active .animateCircle {
+      animation: circle 0.5s ease-in-out forwards;
+    }
+  }
+  & .appearCard {
+    animation: appearC 1s ease-in-out both;
+  }
+  @for $i from 1 through 4 {
+    & .appearCard_#{$i} {
+      animation-delay: 0.3 * ($i - 1s);
+    }
+  }
+}
