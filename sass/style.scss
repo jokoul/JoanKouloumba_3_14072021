@@ -386,15 +386,16 @@ a {
     }
   }
   &Card {
-    @include dimension($width: 100%, $height: 20rem);
+    @include dimension($width: 100%, $height: 21rem);
     border-radius: 2rem;
     background-color: white;
     margin-bottom: 2rem;
-    padding-bottom: 0.5rem;
+    /*padding-bottom: 0.5rem;*/
+    cursor: pointer;
     box-shadow: 0 0.2rem 1rem lighten($clr-shadow, 40%);
     @include position($position: relative);
     @media screen and (min-width: 1024px) {
-      @include dimension($width: 45%);
+      @include dimension($width: 45%, $height: 21rem);
     }
     &Img {
       @include dimension($width: 100%, $height: 15rem);
@@ -402,7 +403,7 @@ a {
       object-fit: cover;
     }
     &Legend {
-      margin: 1rem 2rem 0.5rem 1rem;
+      padding: 1rem 2rem 1.5rem 1rem;
     }
     &Title {
       @include texte_style(
@@ -760,6 +761,7 @@ a {
     margin-bottom: 3.5rem;
     border: none;
     border-radius: 10rem;
+    cursor: pointer;
     background: linear-gradient(-5deg, $clr-primary 5%, $clr-secondary 95%);
     @include texte_style($font-size: 1.3rem, $font-weight: 500, $color: white);
     padding: 1rem;

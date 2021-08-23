@@ -446,11 +446,12 @@ a {
 }
 .restaurantCard {
   width: 100%;
-  height: 20rem;
+  height: 21rem;
   border-radius: 2rem;
   background-color: white;
   margin-bottom: 2rem;
-  padding-bottom: 0.5rem;
+  /*padding-bottom: 0.5rem;*/
+  cursor: pointer;
   box-shadow: 0 0.2rem 1rem #cacaca;
   position: relative;
   top: unset;
@@ -461,7 +462,7 @@ a {
 @media screen and (min-width: 1024px) {
   .restaurantCard {
     width: 45%;
-    height: unset;
+    height: 21rem;
   }
 }
 .restaurantCardImg {
@@ -471,7 +472,7 @@ a {
   object-fit: cover;
 }
 .restaurantCardLegend {
-  margin: 1rem 2rem 0.5rem 1rem;
+  padding: 1rem 2rem 1.5rem 1rem;
 }
 .restaurantCardTitle {
   font-size: 1.5rem;
@@ -895,6 +896,7 @@ a {
   margin-bottom: 3.5rem;
   border: none;
   border-radius: 10rem;
+  cursor: pointer;
   background: linear-gradient(-5deg, #9356dc 5%, #ff79da 95%);
   font-size: 1.3rem;
   font-weight: 500;
